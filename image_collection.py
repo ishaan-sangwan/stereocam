@@ -3,7 +3,8 @@ import cv2
 cam1 = cv2.VideoCapture(0)
 cam2 = cv2.VideoCapture(1)
 
-num = 0
+num =0
+
 
 while cam1.isOpened():
     ret1, img1 = cam1.read()
@@ -15,13 +16,15 @@ while cam1.isOpened():
     if ret2:
         cv2.imshow("img2", img2)
         
-        
+    # im_h = cv2.hconcat([img1,img2])
+    # cv2.imshow("combined", im_h)
     if cv2.waitKey(5)  == 27:
         break
     elif cv2.waitKey(5) == ord("s"):
         cv2.imwrite("images/stereoLeft/imageL" + str(num)+ ".png", img1)
         cv2.imwrite("images/stereoRight/imageR"+str(num)+".png", img2)
-        num += 1
+        num+=1
+        
     
     
 cam1.release()
