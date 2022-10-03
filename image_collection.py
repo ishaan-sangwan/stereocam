@@ -2,14 +2,14 @@ import cv2
 
 cam1 = cv2.VideoCapture(0)
 cam2 = cv2.VideoCapture(1)
-
+# cam1.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+# cam2.set(cv2.CAP_PROP_FRAME_WIDTH, 480)
 num =0
-
 
 while cam1.isOpened():
     ret1, img1 = cam1.read()
     ret2, img2 = cam2.read()
-    
+    img1 = cv2.flip(img1, 1)
     
     if ret1:
         cv2.imshow("img1", img1)
