@@ -29,6 +29,6 @@ while cam1.isOpened():
     
 cam1.release()
 cam2.release()
-    
+
 cv2.destroyAllWindows()
     
